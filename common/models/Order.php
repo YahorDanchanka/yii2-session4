@@ -53,6 +53,11 @@ class Order extends ActiveRecord
         ];
     }
 
+    public function extraFields()
+    {
+        return ['transactionType', 'sourceWarehouse', 'destinationWarehouse'];
+    }
+
     public function getDestinationWarehouse(): ActiveQuery
     {
         return $this->hasOne(Warehouse::class, ['ID' => 'DestinationWarehouseID']);

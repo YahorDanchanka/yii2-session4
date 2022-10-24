@@ -46,7 +46,9 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'order-item', 'pluralize' => false],
+            ],
         ],
     ],
     'params' => $params,

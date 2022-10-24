@@ -47,6 +47,11 @@ class OrderItem extends ActiveRecord
         ];
     }
 
+    public function extraFields()
+    {
+        return ['order', 'part'];
+    }
+
     public function getOrder(): ActiveQuery
     {
         return $this->hasOne(Order::class, ['ID' => 'OrderID']);
