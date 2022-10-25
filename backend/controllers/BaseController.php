@@ -23,7 +23,8 @@ class BaseController extends ActiveController
             'class' => Cors::class,
             'cors' => [
                 'Origin' => ['*'],
-                'Access-Control-Expose-Headers' => ['*']
+                'Access-Control-Expose-Headers' => ['*'],
+                'Access-Control-Allow-Headers' => ['*']
             ]
         ];
 

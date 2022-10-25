@@ -48,6 +48,10 @@ return [
             'showScriptName' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'order-item', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'supplier'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'warehouse'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'part'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'order'],
             ],
         ],
     ],
