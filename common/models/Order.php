@@ -55,7 +55,7 @@ class Order extends ActiveRecord
 
     public function extraFields()
     {
-        return ['transactionType', 'sourceWarehouse', 'destinationWarehouse'];
+        return ['transactionType', 'sourceWarehouse', 'destinationWarehouse', 'orderItems'];
     }
 
     public function getDestinationWarehouse(): ActiveQuery

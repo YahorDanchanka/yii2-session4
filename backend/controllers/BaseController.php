@@ -24,7 +24,8 @@ class BaseController extends ActiveController
             'cors' => [
                 'Origin' => ['*'],
                 'Access-Control-Expose-Headers' => ['*'],
-                'Access-Control-Allow-Headers' => ['*']
+                'Access-Control-Allow-Headers' => ['*'],
+                'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'DELETE'],
             ]
         ];
 
