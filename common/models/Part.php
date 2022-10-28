@@ -43,6 +43,11 @@ class Part extends ActiveRecord
         ];
     }
 
+    public function extraFields()
+    {
+        return ['orderItems'];
+    }
+
     public function getOrderItems(): ActiveQuery
     {
         return $this->hasMany(OrderItem::class, ['PartID' => 'ID']);

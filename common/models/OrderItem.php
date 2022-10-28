@@ -19,6 +19,11 @@ use yii\db\ActiveRecord;
  */
 class OrderItem extends ActiveRecord
 {
+    private array $meta = [
+        'currentStock' => null,
+        'receivedStock' => null
+    ];
+
     public static function tableName()
     {
         return 'orderitems';
@@ -47,6 +52,11 @@ class OrderItem extends ActiveRecord
         ];
     }
 
+    public function fields()
+    {
+        return [...parent::fields(), 'currentStock', 'receivedStock'];
+    }
+
     public function extraFields()
     {
         return ['order', 'part'];
@@ -60,5 +70,25 @@ class OrderItem extends ActiveRecord
     public function getPart(): ActiveQuery
     {
         return $this->hasOne(Part::class, ['ID' => 'PartID']);
+    }
+
+    public function getCurrentStock(): ?int
+    {
+        return $this->meta['currentStock'];
+    }
+
+    public function setCurrentStock(int $value)
+    {
+        $this->meta['currentStock'] = $value;
+    }
+
+    public function getReceivedStock(): ?int
+    {
+        return $this->meta['receivedStock'];
+    }
+
+    public function setReceivedStock(int $value)
+    {
+        $this->meta['receivedStock'] = $value;
     }
 }
